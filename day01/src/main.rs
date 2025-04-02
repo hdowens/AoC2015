@@ -17,6 +17,7 @@ fn main() {
 
         index += 1;
         if floor == -1 {
+            //will be the first one printed, no need to overcomplicate.
             println!("Part 2: {index}");
         }
     }
