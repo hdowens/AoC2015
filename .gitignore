@@ -9,3 +9,14 @@ target/
 # MSVC Windows builds of rustc generate these, which store debugging information
 *.pdb
 
+.vscode
+.vscode/*
+
+# Ignore all
+*
+
+# Unignore all with extensions
+!*.*
+
+# Unignore all dirs
+!*/
