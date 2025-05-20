@@ -7,11 +7,11 @@ def main(file_path: Path) -> None:
 
     with open(file_path, "r") as f:
         data = f.read().splitlines()
-
-    tot_lens = sum(len(i) for i in data)
     
-    tot_mems = sum(len(ast.literal_eval(i)) for i in data)
-    print(tot_lens - tot_mems)
+    encoded_strs = ['"' + s.replace("\\", r"\\").replace('"', r'\"') + '"' for s in data]
+
+    print("Part 1: ", sum(len(s) for s in data) - sum(len(ast.literal_eval(s)) for s in data))
+    print("Part 2: ", sum(len(s) for s in encoded_strs) - sum(len(ast.literal_eval(s)) for s in encoded_strs))
 
 if __name__ == "__main__":
     parser = ArgumentParser()
